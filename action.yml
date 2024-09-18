@@ -1,0 +1,23 @@
+name: 'keepass-to-environment'
+description: 'put all secrets from a keepass file into environment variables'
+inputs:
+  keepass-file-path:
+    description: ''
+    required: true
+  keepass-master-password:
+    description: ''
+    required: true
+  keepass-group-filter:
+    description: ''
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '--keepass_file_path'
+    - ${{ inputs.keepass-file-path }}
+    - '--keepass_master_password'
+    - ${{ inputs.keepass-master-password }}
+    - '--keepass_group_filter'
+    - ${{ inputs.keepass-group-filter }}
