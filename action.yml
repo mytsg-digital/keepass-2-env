@@ -1,4 +1,4 @@
-name: 'keepass-to-environment'
+name: 'kte'
 description: 'put all secrets from a keepass file into environment variables'
 inputs:
   keepass-file-path:
